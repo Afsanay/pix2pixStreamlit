@@ -59,7 +59,7 @@ if model_type == "anime":
                 ax = plt.imshow(y.permute(1, 2, 0))
                 st.pyplot(fig)
                 
-else:        
+elif model_type == "maps":        
     options = os.listdir(os.path.join('anime', 'images'))
     selected_photo = st.selectbox("Choose a photo", options=options)
 
