@@ -21,7 +21,7 @@ st.title("Anime Coloring with Pix to Pix GAN ShowCase")
 options = os.listdir(os.path.join('anime', 'images'))
 selected_photo = st.selectbox("Choose a photo", options=options)
 
-img_path = os.path.join('data', 'train', selected_photo)
+img_path = os.path.join('anime', 'images', selected_photo)
 image = np.array(Image.open(img_path))
 
 input_image = image[:512, 512:, :3]
@@ -41,7 +41,7 @@ model.eval()
 col1, col2 = st.columns(2)
 if options:
     with col1:
-        img_path = os.path.join('data', 'train', selected_photo)
+        img_path = os.path.join('anime', 'images', selected_photo)
         image = np.array(Image.open(img_path))
 
         input_image = image[:512, 512:, :3]
