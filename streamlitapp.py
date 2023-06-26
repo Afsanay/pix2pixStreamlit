@@ -76,7 +76,7 @@ elif model_type == "maps":
     target_image = config.transform_only_mask(image=target_image)["image"]
     input_image = input_image[None, :, :, :]
     target_image = target_image[None, :, :, :]
-    st.text(os.listdir('./maps_model'))
+    # st.text(os.listdir('./maps_model'))
     path = "./maps_model/gen.pth.tar"
     model = load_model(path)
     model.eval()
