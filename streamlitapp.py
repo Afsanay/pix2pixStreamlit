@@ -80,15 +80,15 @@ elif model_type == "maps":
     model = load_model(path)
     model.eval()
 
-#     col1, col2 = st.columns(2)
-#     if options:
-#         with col1:
-#             img_path = os.path.join('maps', 'images', selected_photo)
-#             image = np.array(Image.open(img_path))
+    col1, col2 = st.columns(2)
+    if options:
+        with col1:
+            img_path = os.path.join('maps', 'images', selected_photo)
+            image = np.array(Image.open(img_path))
 
-#             input_image = image[:512, 512:, :3]
-#             input_image = input_image[None, :, :, :]
-#             st.image(input_image)
+            input_image = image[:512, 512:, :3]
+            input_image = input_image[None, :, :, :]
+            st.image(input_image)
 
 #         with col2:
 #             with torch.no_grad():
