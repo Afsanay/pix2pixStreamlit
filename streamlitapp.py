@@ -86,7 +86,7 @@ elif model_type == "maps":
             img_path = os.path.join('maps', 'images', selected_photo)
             image = np.array(Image.open(img_path))
 
-            input_image = image[:600, :600, :3]
+            input_image = image[:600, 600:, :3]
             input_image = input_image[None, :, :, :]
             st.image(input_image)
 
