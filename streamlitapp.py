@@ -16,11 +16,11 @@ with st.sidebar:
     st.title("Pix to Pix GAN")
     st.info(
         "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters")
-
+    model_type = st.selectbox("Choose a model" , options=["anime","maps"])
+    
 st.title("Anime Coloring with Pix to Pix GAN ShowCase")
 
-model_type = st.selectbox("Choose a model" , options=["anime","maps"])
-if model_type == "anime":
+if model_type == "anime"
     options = os.listdir(os.path.join('anime', 'images'))
     selected_photo = st.selectbox("Choose a photo", options=options)
 
