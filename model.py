@@ -91,11 +91,11 @@ class Generator(nn.Module):
         up7 = self.up7(torch.cat([up6, d2], 1))
         return self.final_up(torch.cat([up7, d1], 1))
 
-def load_model():
+def load_model(path):
     model = Generator(in_channels=3, features=64)
     # print(model)
     opt_gen = optim.Adam(model.parameters(), lr=config.LEARNING_RATE, betas=(0.5, 0.999))
-    checkpoint = torch.load("gen.pth.tar", map_location=torch.device('cpu'))
+    checkpoint = torch.load(path, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint["state_dict"])
     opt_gen.load_state_dict(checkpoint["optimizer"])
     for param_grp in opt_gen.param_groups:

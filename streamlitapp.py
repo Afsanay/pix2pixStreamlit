@@ -36,8 +36,8 @@ if model_type == "anime":
     target_image = config.transform_only_mask(image=target_image)["image"]
     input_image = input_image[None, :, :, :]
     target_image = target_image[None, :, :, :]
-
-    model = load_model()
+    path = "gen.pth.tar"
+    model = load_model(path)
     model.eval()
 
     col1, col2 = st.columns(2)
