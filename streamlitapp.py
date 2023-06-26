@@ -67,7 +67,7 @@ elif model_type == "maps":
     image = np.array(Image.open(img_path))
 
     input_image = image[:600, :600, :3]
-    target_image = image[:512, :600, :3]
+    target_image = image[:600, :600, :3]
 
     augmentations = config.both_transform(image=input_image, image0=target_image)
     input_image = augmentations["image"]
@@ -76,6 +76,7 @@ elif model_type == "maps":
     target_image = config.transform_only_mask(image=target_image)["image"]
     input_image = input_image[None, :, :, :]
     target_image = target_image[None, :, :, :]
+    st.text(os.listdir('.'))
     path = "./maps_model/gen.pth.tar"
     model = load_model(path)
     model.eval()

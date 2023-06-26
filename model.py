@@ -93,7 +93,6 @@ class Generator(nn.Module):
 
 def load_model(path):
     model = Generator(in_channels=3, features=64)
-    # print(model)
     opt_gen = optim.Adam(model.parameters(), lr=config.LEARNING_RATE, betas=(0.5, 0.999))
     checkpoint = torch.load(path, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint["state_dict"])
