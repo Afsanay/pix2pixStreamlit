@@ -8,7 +8,6 @@ import torch
 from matplotlib import pyplot as plt
 
 st.set_page_config(layout='wide')
-
 with st.sidebar:
     st.image(
         'https://imageio.forbes.com/specials-images/imageserve/5f51c38ba72e09805e578c53/3-Predictions-For-The-Role-Of'
@@ -20,7 +19,7 @@ with st.sidebar:
     
 st.title("Anime Coloring with Pix to Pix GAN ShowCase")
 
-if model_type == "anime"
+if model_type == "anime":
     options = os.listdir(os.path.join('anime', 'images'))
     selected_photo = st.selectbox("Choose a photo", options=options)
 
