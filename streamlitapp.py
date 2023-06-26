@@ -18,7 +18,7 @@ with st.sidebar:
         "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters")
 
 st.title("Anime Coloring with Pix to Pix GAN ShowCase")
-options = os.listdir(os.path.join('data', 'train'))
+options = os.listdir(os.path.join('anime', 'images'))
 selected_photo = st.selectbox("Choose a photo", options=options)
 
 img_path = os.path.join('data', 'train', selected_photo)
