@@ -15,8 +15,8 @@ with st.sidebar:
     st.title("Pix to Pix GAN")
     st.info(
         "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters")
-    model_type = st.selectbox("Choose a model" , options=["anime","maps"])
-    
+    model_type = st.selectbox("Choose a model", options=["anime", "maps"])
+
 st.title("Anime Coloring with Pix to Pix GAN ShowCase")
 
 if model_type == "anime":
@@ -54,10 +54,12 @@ if model_type == "anime":
             with torch.no_grad():
                 y_fake = model(target_image)
                 y_fake = y_fake * 0.5 + 0.5
-                y = torch.squeeze(y_fake)
-                fig, ax = plt.subplots()
-                ax = plt.imshow(y.permute(1, 2, 0))
-                st.pyplot(fig)
+                y = torch.squeeze(y_fake).permute(1, 2, 0)
+                final_arr = np.array(y.cpu())
+                final_arr = final_arr[:,:,:3]
+                final_image = Image.fromarray((final_arr*255).astype(np.uint8))
+                final_image = final_image.resize((512, 512))
+                st.image(final_image)
 
 elif model_type == "maps":
     options = os.listdir(os.path.join('maps', 'images'))
@@ -94,8 +96,9 @@ elif model_type == "maps":
             with torch.no_grad():
                 y_fake = model(target_image)
                 y_fake = y_fake * 0.5 + 0.5
-                y = torch.squeeze(y_fake)
-                fig, ax = plt.subplots()
-                ax = plt.imshow(y.permute(1, 2, 0))
-                st.pyplot(fig)
-    
+                y = torch.squeeze(y_fake).permute(1, 2, 0)
+                final_arr = np.array(y.cpu())
+                final_arr = final_arr[:, :, :3]
+                final_image = Image.fromarray((final_arr * 255).astype(np.uint8))
+                final_image = final_image.resize((512, 512))
+                st.image(final_image)
