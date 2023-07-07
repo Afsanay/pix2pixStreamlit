@@ -19,7 +19,7 @@ with st.sidebar:
 
 st.title("Anime Coloring with Pix to Pix GAN ShowCase")
 
-tab1,tabs2 = st.tabs(["Demonstration","About"])
+tab1,tab2 = st.tabs(["Demonstration","About"])
 with tab1:
     if model_type == "anime":
         options = os.listdir(os.path.join('anime', 'images'))
@@ -106,4 +106,7 @@ with tab1:
                     st.image(final_image)
 
 with tab2:
-    st.write("nsin")
+    st.markdown("""
+                <p style="font-size:20px; text-align:center">Pix2Pix GAN is an architecture designed for image-to-image translation tasks, where the goal is to convert an input image from one domain to another.The generator network in Pix2Pix GAN consists of an encoder-decoder structure. The encoder takes the input image and progressively reduces its spatial dimensions, capturing high-level features. The decoder then takes the encoded representation and progressively upsamples it, generating the output image. Skip connections are used to connect the encoder and decoder at multiple layers, facilitating the flow of information and preserving fine-grained details.The discriminator network in Pix2Pix GAN is similar to the discriminator in traditional GANs. </p>
+                <img style="display: block; margin-left: auto; margin-right: auto;padding: 5px;" src="https://neurohive.io/wp-content/uploads/2018/11/Capture-8.jpg" />
+                """,unsafe_allow_html=True)
