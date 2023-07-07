@@ -17,7 +17,7 @@ with st.sidebar:
         "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters")
     model_type = st.selectbox("Choose a model", options=["anime", "maps"])
 
-st.title("Anime Coloring with Pix to Pix GAN ShowCase")
+st.title("Image-to-Image translation with Pix2Pix")
 
 tab1,tab2 = st.tabs(["Demonstration","About"])
 with tab1:
