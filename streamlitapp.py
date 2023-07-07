@@ -14,7 +14,7 @@ with st.sidebar:
         '-Artificial-Intelligence-In-Art-And-Design/960x0.jpg?format=jpg&width=960')
     st.title("Generative Adversarial Networks")
     st.info(
-        "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters")
+        "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters or change the satellite view to roadmap view")
     model_type = st.selectbox("Choose a model", options=["anime", "maps"])
 
 st.title("Image-to-Image translation with Pix2Pix")
