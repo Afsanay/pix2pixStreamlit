@@ -12,7 +12,7 @@ with st.sidebar:
     st.image(
         'https://imageio.forbes.com/specials-images/imageserve/5f51c38ba72e09805e578c53/3-Predictions-For-The-Role-Of'
         '-Artificial-Intelligence-In-Art-And-Design/960x0.jpg?format=jpg&width=960')
-    st.title("Pix to Pix GAN")
+    st.title("Generative Adversarial Networks")
     st.info(
         "This is an image to image model that changes the characteristics of an image. In this case this is able to color the drawings of anime characters")
     model_type = st.selectbox("Choose a model", options=["anime", "maps"])
